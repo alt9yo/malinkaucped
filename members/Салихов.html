@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Данис</title>
+  <link href="../assets/style.css" rel="stylesheet">
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tablinks = document.getElementsByClassName("tab");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+    window.onload = () => {
+      document.getElementById("about").classList.add("active");
+    }
+  </script>
+  <style>
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .photo-grid img {
+      width: 100%;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../members.html" class="button-back">← Назад</a>
+
+    <div class="tabs">
+      <div class="tab active" onclick="openTab(event, 'about')">О себе</div>
+      <div class="tab" onclick="openTab(event, 'photos')">Фото</div>
+      <div class="tab" onclick="openTab(event, 'contacts')">Контакты</div>
+    </div>
+
+    <div id="about" class="tab-content active">
+      <p>Привет! Я аналитик в IT-команде. Моя задача — понять, что на самом деле нужно бизнесу и пользователям, и перевести эти потребности в четкие требования для разработчиков. Я — мост между миром идей и миром кода.</p>
+    </div>
+
+    <div id="photos" class="tab-content">
+      <h3>Фотографии</h3>
+      <div class="photo-grid">
+        <img src="../assets/img/Салихов1.jpg" alt="Фото Салихов 1">
+        <img src="../assets/img/Салихов2.jpg" alt="Фото Салихов 2">
+      </div>
+    </div>
+
+    <div id="contacts" class="tab-content">
+      <p>Telegram: @salikHOW</p>
+    </div>
+  </div>
+</body>
+</html>
